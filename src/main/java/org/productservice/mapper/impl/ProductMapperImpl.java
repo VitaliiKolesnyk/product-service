@@ -15,6 +15,7 @@ public class ProductMapperImpl implements ProductMapper {
     public Product map(ProductRequest productRequest) {
         return Product.builder()
                 .name(productRequest.name())
+                .skuCode(productRequest.skuCode())
                 .description(productRequest.description())
                 .price(productRequest.price())
                 .build();
@@ -22,7 +23,7 @@ public class ProductMapperImpl implements ProductMapper {
 
     @Override
     public ProductResponse map(Product product) {
-        return new ProductResponse(product.getId(), product.getName(), product.getDescription(), product.getPrice());
+        return new ProductResponse(product.getId(), product.getSkuCode(), product.getName(), product.getDescription(), product.getPrice());
     }
 
     @Override

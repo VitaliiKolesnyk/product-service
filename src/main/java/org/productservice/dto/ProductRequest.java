@@ -2,5 +2,5 @@ package org.productservice.dto;
 
 import java.math.BigDecimal;
 
-public record ProductRequest(String id,String name,String description,BigDecimal price){
+public record ProductRequest(String id,String skuCode, String name,String description,BigDecimal price){
         }
