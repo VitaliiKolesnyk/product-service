@@ -7,24 +7,20 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-
-@Document(value = "product")
+@Document(value = "cart_item")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Data
-public class Product {
+public class CartItem {
 
-    @Id
-    private String id;
+    private Product product;
 
-    private String name;
+    private int quantity;
 
-    private String skuCode;
+    private Double totalPrice;
 
-    private String description;
-
-    private Double price;
-
-    private String thumbnailUrl;
+    public void calculateTotalPrice() {
+        this.totalPrice = this.quantity * product.getPrice();
+    }
 }

@@ -23,7 +23,8 @@ public class ProductMapperImpl implements ProductMapper {
 
     @Override
     public ProductResponse map(Product product) {
-        return new ProductResponse(product.getId(), product.getSkuCode(), product.getName(), product.getDescription(), product.getPrice());
+        return new ProductResponse(product.getId(), product.getSkuCode(),
+                product.getName(), product.getDescription(), product.getPrice(), product.getThumbnailUrl());
     }
 
     @Override
